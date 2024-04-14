@@ -8,7 +8,7 @@ function App() {
     <Router>
       <div>
         {/* Links pour la navigation */}
-        {/* <nav>
+        <nav>
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -17,7 +17,7 @@ function App() {
               <Link to="/about">About</Link>
             </li>
           </ul>
-        </nav> */}
+        </nav>
 
         {/* Routes pour les différents composants de page */}
         <Routes>
