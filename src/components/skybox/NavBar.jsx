@@ -11,7 +11,7 @@ const Navbar = () => {
     };
   
     return (
-      <group position={[0, 0, -2]}>
+      <group position={[0, 5 ,2]}>
         <NavbarItem position={[-1, 0, 0]} onClick={() => handleNavClick('Home')}>
           Home
         </NavbarItem>
