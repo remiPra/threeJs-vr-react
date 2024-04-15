@@ -2,13 +2,15 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
+import Navbar from './components/skybox/Navbar';
 
 function App() {
   return (
     <Router>
       <div>
         {/* Links pour la navigation */}
-        <nav>
+        <Navbar/>
+        <nav >
           <ul>
             <li>
               <Link to="/">Home</Link>
