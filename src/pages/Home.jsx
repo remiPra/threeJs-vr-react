@@ -4,12 +4,14 @@ import Skybox from '../components/Skybox';
 import { Canvas } from '@react-three/fiber'
 import { VRButton, ARButton, XR, Controllers, Hands } from '@react-three/xr'
 import { OrbitControls } from '@react-three/drei';
+import Navbar from '../components/skybox/Navbar';
 
 function Home() {
   return (
     <div style={{ height: '100vh' }}>
     <VRButton />
     <Canvas>
+      <Navbar/>
       <OrbitControls/>
       <XR>
         <Controllers />

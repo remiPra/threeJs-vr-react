@@ -9,7 +9,7 @@ function App() {
     <Router>
       <div>
         {/* Links pour la navigation */}
-        <Navbar/>
+        {/* <Navbar/> */}
         <nav >
           <ul>
             <li>
