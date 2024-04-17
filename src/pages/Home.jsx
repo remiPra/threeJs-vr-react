@@ -1,33 +1,30 @@
 // Home.jsx
-import React from 'react';
-import Skybox from '../components/Skybox';
-import { Canvas  } from '@react-three/fiber'
-import { VRButton, ARButton, XR, Controllers, Hands } from '@react-three/xr'
+import React, { useState } from 'react';
+import { Canvas } from '@react-three/fiber';
+import { VRButton, XR, Controllers, Hands } from '@react-three/xr';
 import { OrbitControls } from '@react-three/drei';
 import NavBar from '../components/skybox/NavBar';
-import HtmlContent from '../components/skybox/HtmlContent';
-import AudioSoundBackground from '../components/skybox/AudioComponent';
-import AudioComponent from '../components/skybox/AudioComponent';
+import Skybox from '../components/Skybox';
 import Sound from '../components/skybox/AudioComponent';
 
-
-
 function Home() {
+  const [audioPlaying, setAudioPlaying] = useState(false); // État pour contrôler la lecture de l'audio
+
+  const handleAudioPlay = () => {
+    setAudioPlaying(true); // Activer la lecture de l'audio sur interaction
+  };
+
   return (
     <div style={{ height: '100vh' }}>
-      <VRButton />
       <Canvas>
         <OrbitControls />
-        {/* <AudioSoundBackground url='arabic.mp3' /> */}
-        {/* <AudioComponent position={[0, 0, 0]} /> */}
         <XR>
-          <Sound url={'./arabic.mp3'}/>
+          {audioPlaying && <Sound url={'./arabic.mp3'} />}
           <Controllers />
           <Hands />
           <NavBar />
-          {/* <HtmlContent/> */}
           <Skybox img="Epic_Digital_Painting_equirectangular-jpg_Inside_an_art_nouveau_266220476_10676378.jpg" />
-
+      <VRButton onInteract={handleAudioPlay} /> {/* Exemple d'utilisation du VRButton pour déclencher l'audio */}
         </XR>
       </Canvas>
     </div>
