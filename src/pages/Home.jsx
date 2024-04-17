@@ -1,13 +1,14 @@
 // Home.jsx
 import React from 'react';
 import Skybox from '../components/Skybox';
-import { Canvas } from '@react-three/fiber'
+import { Canvas  } from '@react-three/fiber'
 import { VRButton, ARButton, XR, Controllers, Hands } from '@react-three/xr'
 import { OrbitControls } from '@react-three/drei';
 import NavBar from '../components/skybox/NavBar';
 import HtmlContent from '../components/skybox/HtmlContent';
-import AudioSoundBackground from '../components/skybox/AudioSoundBackground';
-import AudioComponent from '../components/skybox/AudioSoundBackground';
+import AudioSoundBackground from '../components/skybox/AudioComponent';
+import AudioComponent from '../components/skybox/AudioComponent';
+import Sound from '../components/skybox/AudioComponent';
 
 
 
@@ -17,9 +18,10 @@ function Home() {
       <VRButton />
       <Canvas>
         <OrbitControls />
-        <AudioSoundBackground url='arabic.mp3' />
-
+        {/* <AudioSoundBackground url='arabic.mp3' /> */}
+        {/* <AudioComponent position={[0, 0, 0]} /> */}
         <XR>
+          <Sound url={'./arabic.mp3'}/>
           <Controllers />
           <Hands />
           <NavBar />

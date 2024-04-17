@@ -6,7 +6,7 @@ import { Pigeon } from '../components/Pigeon';
 import RedCube from '../components/skybox/RedCube';
 import CameraController from '../components/skybox/CameroController';
 import { Text } from '@react-three/drei'; // Import the Text component
-import AudioSoundBackground from '../components/skybox/AudioSoundBackground';
+import AudioSoundBackground from '../components/skybox/AudioComponent';
 
 function Home() {
   const img = "Watercolor_equirectangular-jpg_VR360_view_Trulli_futuristic_210382211_10673520.jpg"
