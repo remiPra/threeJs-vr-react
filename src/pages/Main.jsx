@@ -18,10 +18,10 @@ function Main() {
 
             {/* Ajoutez le composant Canvas avec votre Skybox à l'intérieur */}
 
-                <AudioPlayer src="arabic.mp3" autoPlay={true} />
+            <AudioPlayer src="arabic.mp3" autoPlay={true} />
             <Canvas>
 
-                {/* <CameraController/> */}
+                <CameraController/>
                 <OrbitControls />
                 <Text
                     position={[-48, 35, -150]} // Position of the text in your scene

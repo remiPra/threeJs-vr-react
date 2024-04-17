@@ -11,7 +11,7 @@ function AudioPlayer({ src, autoplay = false }) {
 
     return (
 
-        <audio style={{position:'absolute',zIndex:2}} autoplay ref={audioRef} src={src} controls loop>
+        <audio style={{position:'absolute',right:0,zIndex:2}} autoplay ref={audioRef} src={src} controls loop>
             Your browser does not support the audio element.
         </audio>
     );

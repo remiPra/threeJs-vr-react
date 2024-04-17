@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import AudioPlayer from './components/skybox/AudioPlayer';
 import Main from './pages/Main';
+import Exemple from './pages/Exemple';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/vr" element={<Home />} />
+          <Route path="/sound" element={<Exemple />} />
           <Route path="/about" element={<About />} />
         </Routes>
 
