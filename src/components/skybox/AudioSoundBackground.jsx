@@ -1,31 +1,31 @@
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useThree, useLoader } from '@react-three/fiber';
 import { AudioLoader, AudioListener, PositionalAudio } from 'three';
 
-function AudioSoundBackground({ url, position }) {
-  const sound = useRef();
-  const { camera } = useThree();
-  const buffer = useLoader(AudioLoader, url);
-
-  useEffect(() => {
+const AudioComponent = ({ url }) => {
+    const sound = useRef();
+    const { camera } = useThree();
     const listener = new AudioListener();
-    camera.add(listener);
+    const audioBuffer = useLoader(AudioLoader, url);
 
-    const audio = new PositionalAudio(listener);
-    audio.setBuffer(buffer);
-    audio.setRefDistance(1);
-    audio.setLoop(true);
-    audio.play();
+    useEffect(() => {
+        camera.add(listener);
+        sound.current = new PositionalAudio(listener);
+        sound.current.setBuffer(audioBuffer);
+        sound.current.setRefDistance(1);
+        sound.current.setLoop(true);
+        sound.current.play();
+        console.log(sound)
 
-    sound.current = audio;
+        return () => {
+            if (sound.current) {
+                sound.current.stop();
+                sound.current.disconnect();
+            }
+            camera.remove(listener);
+        };
+    }, [audioBuffer, camera]);
 
-    // Add the positional audio to the object's mesh
-    return () => {
-      sound.current?.disconnect();
-    };
-  }, [buffer, camera, position]);
-
-  return <primitive object={sound.current} position={position} />;
-}
-
-export default  AudioSoundBackground;
+    return sound.current ? <primitive object={sound.current} /> : null;
+};
+export default AudioComponent

@@ -2,11 +2,13 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
-import Navbar from './components/skybox/Navbar';
+import AudioPlayer from './components/skybox/AudioPlayer';
 
 function App() {
   return (
     <Router>
+      {/* <AudioPlayer src="Dune.mp3" autoplay={true} /> */}
+
       <div>
         {/* Links pour la navigation */}
         {/* <Navbar/> */}
@@ -26,6 +28,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
         </Routes>
+
       </div>
     </Router>
   );
